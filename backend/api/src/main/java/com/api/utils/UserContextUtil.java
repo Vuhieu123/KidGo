@@ -1,4 +1,4 @@
-package com.api.untils;
+package com.api.utils;
 
 import com.shared.db.entities.Account;
 import org.springframework.security.core.context.SecurityContextHolder;

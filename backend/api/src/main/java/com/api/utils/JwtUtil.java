@@ -1,4 +1,4 @@
-package com.api.untils;
+package com.api.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
