@@ -31,10 +31,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class AccountServiceImpl implements AccountService {
-    private final AuthService authService;
-    private final ParentRepository parentRepository;
-    private final StudentRepository studentRepository;
 
+    private final AuthService authService;
+
+    private final ParentRepository parentRepository;
+
+    private final StudentRepository studentRepository;
 
     @Override
     public Page<ParentSearchOutput> searchParents(ParentSearchInput input) {

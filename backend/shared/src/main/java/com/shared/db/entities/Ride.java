@@ -29,7 +29,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tieptd_194185_ride")
+@Table(name = "ride")
 public class Ride {
 
     @Id

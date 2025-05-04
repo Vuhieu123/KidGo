@@ -8,15 +8,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@ComponentScan("com.*")
-@ComponentScan("com.example.shared.*")
-@EnableJpaRepositories("com.example.shared.*")
-@EntityScan("com.example.shared.db.entities")
+@ComponentScan(basePackages = {"com", "com.shared"}) // Quét toàn bộ các package cần thiết
+@EnableJpaRepositories("com.shared.db.repo") // Chỉ định chính xác package chứa repository
+@EntityScan("com.shared.db.entities") // Đảm bảo chính xác package chứa entity
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableAsync
 @EnableWebSecurity
@@ -29,3 +27,4 @@ public class ApiApplication {
     }
 
 }
+

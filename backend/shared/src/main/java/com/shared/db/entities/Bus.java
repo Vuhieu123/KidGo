@@ -24,7 +24,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tieptd_194185_bus")
+@Table(name = "bus")
 public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
