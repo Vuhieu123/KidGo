@@ -1,4 +1,4 @@
-package com.api.controllers.emloyee.dto;
+package com.api.controllers.employee.dto;
 
 import com.api.services.student_pickup_point.dto.UpdateStudentPickupPointEmployeeInput;
 import com.shared.enumeration.StudentPickupPointStatus;

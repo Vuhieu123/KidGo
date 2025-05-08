@@ -1,4 +1,4 @@
-package com.api.controllers.emloyee.dto;
+package com.api.controllers.employee.dto;
 
 import com.api.services.ride.dto.UpdateRideEmployeeInput;
 import com.shared.enumeration.RideStatus;
