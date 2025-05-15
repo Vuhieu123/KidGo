@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { toast } from "react-toastify";
+import {toast } from "react-toastify";
 
 export const queryClient = new QueryClient({
     defaultOptions: {
@@ -24,6 +24,6 @@ export default function TanstackProvider({ children }: { children: React.ReactNo
         <QueryClientProvider client={queryClient}>
             {children}
             <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+        </QueryClientProvider>
 );
 }
