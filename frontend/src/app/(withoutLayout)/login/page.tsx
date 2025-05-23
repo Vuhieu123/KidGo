@@ -74,7 +74,7 @@ export default function Login() {
                             <form className="flex flex-col gap-4"
                                   onSubmit={handleSubmitSignUp(handleSignUp)}
                             >
-                                {/* <Input isRequired label="Name" placeholder="Enter your name" type="password" /> */}
+                                {/* <Input isRequired label="Name" placeholder="Enter your name" types="password" /> */}
                                 <Input isRequired label="Email" placeholder="Enter your email" type="email"
                                        {...registerSignUp("username", { required: true })}
                                 />
