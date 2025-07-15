@@ -1,2 +1,38 @@
-package com.api.controllers.client.dto;public class ClientStudentFilterParam {
+package com.api.controllers.client.dto;
+
+import com.api.services.account.dto.StudentSearchInput;
+import com.shared.utils.PageableUtils;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ClientStudentFilterParam {
+    private Long id;
+
+    private String name;
+
+    private String studentClass;
+
+    private String phoneNumber;
+
+    private int page;
+
+    private int size;
+
+    private String sortBy;
+
+    public StudentSearchInput toInput() {
+        return StudentSearchInput.builder()
+                .id(this.id)
+                .name(this.name)
+                .studentClass(this.studentClass)
+                .phoneNumber(this.phoneNumber)
+                .pageable(PageableUtils.generate(this.page, this.size, sortBy, "-createdAt"))
+                .build();
+    }
 }

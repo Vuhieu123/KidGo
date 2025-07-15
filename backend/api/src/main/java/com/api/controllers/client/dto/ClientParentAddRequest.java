@@ -1,2 +1,31 @@
-package com.api.controllers.client.dto;public class ClientParentAddRequest {
+package com.api.controllers.client.dto;
+
+import com.api.services.account.dto.ParentAddInput;
+import com.shared.utils.DateConvertUtil;
+import java.time.Instant;
+import java.util.List;
+import lombok.Data;
+
+@Data
+public class ClientParentAddRequest {
+    private String name;
+    private String avatar;
+    private String dob;
+    private String phoneNumber;
+    private String username;
+    private String password;
+    private List<Long> studentIds;
+
+    public ParentAddInput toInput() {
+        Instant dob = DateConvertUtil.convertStringToInstant(this.dob);
+        return ParentAddInput.builder()
+                .name(this.name)
+                .avatar(this.avatar)
+                .dob(dob)
+                .phoneNumber(this.phoneNumber)
+                .username(this.username)
+                .password(this.password)
+                .studentIds(this.studentIds)
+                .build();
+    }
 }

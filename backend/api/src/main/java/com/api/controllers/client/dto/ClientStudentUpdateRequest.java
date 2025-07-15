@@ -1,2 +1,28 @@
-package com.api.controllers.client.dto;public class ClientStudentUpdateRequest {
+package com.api.controllers.client.dto;
+
+import com.api.services.account.dto.StudentUpdateInput;
+import com.shared.utils.DateConvertUtil;
+import lombok.Data;
+
+@Data
+public class ClientStudentUpdateRequest {
+    private Long id;
+    private String name;
+    private String avatar;
+    private String dob;
+    private String phoneNumber;
+    private String studentClass;
+    private Long parentId;
+
+    public StudentUpdateInput toInput() {
+        return StudentUpdateInput.builder()
+                .id(this.id)
+                .name(this.name)
+                .avatar(this.avatar)
+                .dob(DateConvertUtil.convertStringToInstant(this.dob))
+                .phoneNumber(this.phoneNumber)
+                .studentClass(this.studentClass)
+                .parentId(this.parentId)
+                .build();
+    }
 }
