@@ -1,3 +1,11 @@
+<h1 align="center">Cato</h1>
+<p align="center">
+    <img src="docs/logo.png" alt="Logo" height="128" width="128"/>
+</p>
+<p align="center">
+    Bus Transit system you can host locally!
+</p>
+
 # school-bus-system: 
 This project aims to build a highly customizable school bus dispatching system, providing a flexible and efficient solution for managing and dispatching school buses. Initially, this project will focus on developing a solution to support preschools, elementary schools, middle schools, and high schools, where class schedules are still within certain frameworks and not yet supported for university or equivalent education systems, where schedules and programs are diverse and complex. The system will include functions for managing the fleet of buses, drivers, and bus attendants, managing student and parent information, registering pick-up points and bus schedules, along with a user-friendly interface to enhance the pick-up and drop-off process experience. Especially, the system will be developed with features aimed at convenience and safety in student transportation management.
 
