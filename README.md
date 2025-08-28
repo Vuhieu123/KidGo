@@ -1,4 +1,4 @@
-<h1 align="center">Cato</h1>
+<h1 align="center">KidGo</h1>
 <p align="center">
     <img src="docs/logo.png" alt="Logo" height="128" width="128"/>
 </p>
