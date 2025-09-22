@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class StudentDetailOutput {
+
     private Long id;
 
     private String name;
@@ -34,7 +35,6 @@ public class StudentDetailOutput {
 
     private Instant updatedAt;
 
-
     public static StudentDetailOutput from(Student dto) {
         return StudentDetailOutput.builder()
                 .id(dto.getId())
@@ -52,4 +52,5 @@ public class StudentDetailOutput {
                         Instant.ofEpochMilli(dto.getUpdatedAt().toEpochMilli()) : null)
                 .build();
     }
+
 }

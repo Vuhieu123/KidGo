@@ -12,14 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginRequest {
+
     @NotNull
     private String username;
+
     @NotNull
     private String password;
+
     public static LoginInput toInput(LoginRequest request) {
         return LoginInput.builder()
                 .username(request.getUsername())
                 .password(request.getPassword())
                 .build();
     }
+
 }

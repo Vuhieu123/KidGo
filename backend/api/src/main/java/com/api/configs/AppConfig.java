@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @Configuration
 @EnableScheduling
 public class AppConfig {
+
     private List<String> authorizedRedirectUris = new ArrayList<>();
 
 //    @Autowired
@@ -21,4 +22,5 @@ public class AppConfig {
 //    public JPAQueryFactory jpaQueryFactory() {
 //        return new JPAQueryFactory(em);
 //    }
+
 }

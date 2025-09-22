@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 @AllArgsConstructor
 @Builder
 public class ParentSearchInput {
+
     private Long id;
 
     private String name;
@@ -50,4 +51,5 @@ public class ParentSearchInput {
             return SearchBy.PARENT_NAME;
         }
     }
+
 }

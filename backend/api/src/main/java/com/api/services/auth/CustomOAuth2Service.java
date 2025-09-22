@@ -22,7 +22,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class CustomOAuth2Service extends DefaultOAuth2UserService implements Serializable {
+
     private final AccountRepository accountRepository;
+
     @Override
     public OAuth2User loadUser(OAuth2UserRequest oAuth2UserRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(oAuth2UserRequest);
@@ -68,4 +70,5 @@ public class CustomOAuth2Service extends DefaultOAuth2UserService implements Ser
     private Account updateExistingUser(Account existingUser, OAuth2UserInfo oAuth2UserInfo) {
         return accountRepository.save(existingUser);
     }
+
 }

@@ -8,8 +8,11 @@ import lombok.Data;
 @Data
 @Builder
 public class UpdateRidePickupPointRequest {
+
     private Long rideId;
+
     private Long pickupPointId;
+
     private RidePickupPointStatus status;
 
     public UpdateRidePickupPointEmployeeInput toInput() {
@@ -19,4 +22,5 @@ public class UpdateRidePickupPointRequest {
                 .status(status)
                 .build();
     }
+
 }

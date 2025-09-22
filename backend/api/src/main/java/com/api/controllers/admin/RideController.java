@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class RideController {
+
     private final RideService rideService;
 
     @PostMapping("/upsert")
@@ -41,4 +42,5 @@ public class RideController {
 
         return ResponseUtil.toSuccessCommonResponse("Ride updated successfully");
     }
+
 }

@@ -7,11 +7,17 @@ import lombok.Data;
 
 @Data
 public class UpsertRideRequest {
+
     private Long id;
+
     private Long busId;
+
     private String startAt;
+
     private String endAt;
+
     private String startFrom;
+
     private Boolean isToSchool;
 
     private List<Long> pickupPointIds;
@@ -27,4 +33,5 @@ public class UpsertRideRequest {
                 .isToSchool(isToSchool)
                 .build();
     }
+
 }

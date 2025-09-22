@@ -8,7 +8,9 @@ import lombok.Data;
 @Data
 @Builder
 public class UpdateRideRequest {
+
     private Long rideId;
+
     private RideStatus status;
 
     public UpdateRideEmployeeInput toInput() {
@@ -17,4 +19,5 @@ public class UpdateRideRequest {
                 .status(status)
                 .build();
     }
+
 }

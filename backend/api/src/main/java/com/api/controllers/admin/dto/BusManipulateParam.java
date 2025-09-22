@@ -5,8 +5,13 @@ import lombok.Data;
 
 @Data
 public class BusManipulateParam {
+
     private Boolean isToSchool;
+
     private String date;
+
     private String numberPlate;
+
     private BusStatus status;
+
 }

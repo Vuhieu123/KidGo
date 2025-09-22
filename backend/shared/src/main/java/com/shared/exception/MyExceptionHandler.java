@@ -81,8 +81,6 @@ public class MyExceptionHandler {
                 HttpStatus.BAD_REQUEST);
     }
 
-
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleException(Exception e) {
         e.printStackTrace();
@@ -90,4 +88,5 @@ public class MyExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(CommonResponse.internalError());
     }
+
 }

@@ -11,7 +11,6 @@ import com.shared.db.entities.Account;
 import com.shared.response.CommonResponse;
 import com.shared.utils.ResponseUtil;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -27,8 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/admin/account")
 @RequiredArgsConstructor
-@Slf4j
 public class AccountController {
+
     private final AccountService accountService;
 
     @GetMapping("/parent/pagination")
@@ -110,4 +109,5 @@ public class AccountController {
     public ResponseEntity<CommonResponse<Object>> getParentDetail(@PathVariable(name = "id") Long id) {
         return ResponseUtil.toSuccessCommonResponse(accountService.getParentDetail(id));
     }
+
 }

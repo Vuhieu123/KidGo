@@ -6,8 +6,11 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public class MyException extends RuntimeException {
+
     private final String code;
+
     private final String message;
+
     private final HttpStatus httpStatus;
 
     public MyException(Throwable cause, String code, String message, HttpStatus httpStatus) {
@@ -31,4 +34,5 @@ public class MyException extends RuntimeException {
                 null
         );
     }
+
 }

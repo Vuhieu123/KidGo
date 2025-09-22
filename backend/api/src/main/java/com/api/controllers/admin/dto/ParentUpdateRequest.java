@@ -8,13 +8,21 @@ import lombok.Data;
 
 @Data
 public class ParentUpdateRequest {
+
     private Long id;
+
     private String name;
+
     private String avatar;
+
     private String dob;
+
     private String phoneNumber;
+
     private String username;
+
     private String password;
+
     private List<Long> studentIds;
 
     public ParentUpdateInput toInput() {
@@ -29,4 +37,5 @@ public class ParentUpdateRequest {
                 .studentIds(this.studentIds)
                 .build();
     }
+
 }

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class EmployeePickupPointController {
+
     private final PickupPointService pickupPointService;
 
     @GetMapping("/list-ride-id")
@@ -45,4 +46,5 @@ public class EmployeePickupPointController {
                         DateConvertUtil.convertStringToInstant(date), rideId)
         );
     }
+
 }

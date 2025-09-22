@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 @AllArgsConstructor
 @Builder
 public class StudentSearchInput {
+
     private Long id;
 
     private String name;
@@ -22,4 +23,5 @@ public class StudentSearchInput {
     private String phoneNumber;
 
     private Pageable pageable;
+
 }

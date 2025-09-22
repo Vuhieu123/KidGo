@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetStudentResponse {
+
     private Long id;
 
     private String name;
@@ -52,4 +53,5 @@ public class GetStudentResponse {
                 Instant.ofEpochMilli(output.getUpdatedAt().toEpochMilli()) : null);
         return response;
     }
+
 }

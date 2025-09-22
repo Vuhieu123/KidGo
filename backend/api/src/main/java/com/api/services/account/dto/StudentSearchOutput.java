@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class StudentSearchOutput {
+
     private Long id;
 
     private String name;
@@ -52,4 +53,5 @@ public class StudentSearchOutput {
                         Instant.ofEpochMilli(dto.getUpdatedAt().toEpochMilli()) : null)
                 .build();
     }
+
 }

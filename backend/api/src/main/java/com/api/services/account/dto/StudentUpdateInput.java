@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class StudentUpdateInput {
+
     private Long id;
 
     private String name;

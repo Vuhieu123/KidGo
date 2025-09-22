@@ -6,8 +6,13 @@ import lombok.Data;
 
 @Data
 public class RequestRegistrationFilterParam {
+
     private String studentName;
+
     private String parentName;
+
     private List<RequestRegistrationStatus> statuses;
+
     private String address;
+
 }

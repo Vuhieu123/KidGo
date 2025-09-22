@@ -5,8 +5,11 @@ import lombok.Data;
 
 @Data
 public class AddPickupPointRequest {
+
     private String address;
+
     private Double latitude;
+
     private Double longitude;
 
     public AddPickupPointInput toInput() {
@@ -16,4 +19,5 @@ public class AddPickupPointRequest {
                 .longitude(longitude)
                 .build();
     }
+
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UpsertStudentAssignRequest {
+
     private List<Item> items;
 
     @Data
@@ -32,4 +33,5 @@ public class UpsertStudentAssignRequest {
                 .items(items.stream().map(Item::toInput).toList())
                 .build();
     }
+
 }

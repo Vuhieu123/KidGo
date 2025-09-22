@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class StudentAssignController {
+
     private final StudentAssignService studentAssignService;
+
     @PostMapping()
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<CommonResponse<Object>> upsertStudentAssign(
@@ -28,4 +30,5 @@ public class StudentAssignController {
 
         return ResponseUtil.toSuccessCommonResponse("StudentAssigns were upserted successfully");
     }
+
 }

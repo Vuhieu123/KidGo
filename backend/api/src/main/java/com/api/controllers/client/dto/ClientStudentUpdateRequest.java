@@ -6,12 +6,19 @@ import lombok.Data;
 
 @Data
 public class ClientStudentUpdateRequest {
+
     private Long id;
+
     private String name;
+
     private String avatar;
+
     private String dob;
+
     private String phoneNumber;
+
     private String studentClass;
+
     private Long parentId;
 
     public StudentUpdateInput toInput() {
@@ -25,4 +32,5 @@ public class ClientStudentUpdateRequest {
                 .parentId(this.parentId)
                 .build();
     }
+
 }

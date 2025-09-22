@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class RidePickupPointController {
+
     private final RidePickupPointService ridePickupPointService;
 
     @GetMapping()
@@ -69,4 +70,5 @@ public class RidePickupPointController {
 
         return ResponseUtil.toSuccessCommonResponse("Ride pickup point deleted successfully");
     }
+
 }

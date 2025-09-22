@@ -19,7 +19,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 public class RideAutoCreateScheduler {
+
     private final RideRepository rideRepository;
+
     private final RidePickupPointRepository ridePickupPointRepository;
 
     private final RideService rideService;
@@ -58,4 +60,5 @@ public class RideAutoCreateScheduler {
 
         log.info("End create ride for next day");
     }
+
 }

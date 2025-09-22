@@ -21,9 +21,13 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 public class CustomUserDetails implements UserDetails, OAuth2User {
 
     private long id;
+
     private String username;
+
     private String password;
+
     private UserRole role;
+
     private Map<String, Object> attributes;
 
     public CustomUserDetails (Account account, Map<String, Object> attributes){
@@ -33,6 +37,7 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
         this.attributes = attributes;
         this.role = account.getRole();
     }
+
     public static CustomUserDetails fromAccount(Account account) {
         return new CustomUserDetails(
                 account.getId(),
@@ -103,4 +108,5 @@ public class CustomUserDetails implements UserDetails, OAuth2User {
     public String getName() {
         return this.username;
     }
+
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class ClientParentStudentController {
+
     private final ParentStudentService parentStudentService;
 
     @GetMapping("/student-rides")

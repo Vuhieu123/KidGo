@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class ClientRequestRegistrationController {
+
     private final RequestRegistrationService requestRegistrationService;
 
     @GetMapping("")
@@ -39,4 +40,5 @@ public class ClientRequestRegistrationController {
         requestRegistrationService.upsertRegistration(request.toInput(), account);
         return ResponseUtil.toSuccessCommonResponse("Request registration successfully");
     }
+
 }

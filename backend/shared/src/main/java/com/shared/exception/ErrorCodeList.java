@@ -1,12 +1,15 @@
 package com.shared.exception;
 
 public enum ErrorCodeList {
+
     UNKNOWN_ERROR("TIEP_TD_00", "Unknown Error"),
     INTERNAL_SERVER_ERROR("TIEP_TD_01", "Internal Server Error", true),
-    INVALID_PARAMETER("TIEP_TD_02", "Invalid Parameter"),
-    ;
+    INVALID_PARAMETER("TIEP_TD_02", "Invalid Parameter");
+
     private final String code;
+
     private final String message;
+
     private Boolean shouldAlert = false;
 
     ErrorCodeList(String code, String message) {
@@ -32,4 +35,5 @@ public enum ErrorCodeList {
     public Boolean shouldAlert() {
         return shouldAlert;
     }
+
 }

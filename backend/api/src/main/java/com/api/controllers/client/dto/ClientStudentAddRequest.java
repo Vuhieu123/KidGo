@@ -6,11 +6,17 @@ import lombok.Data;
 
 @Data
 public class ClientStudentAddRequest {
+
     private String name;
+
     private String avatar;
+
     private String dob;
+
     private String phoneNumber;
+
     private String studentClass;
+
     private Long parentId;
 
     public StudentAddInput toInput() {
@@ -23,4 +29,5 @@ public class ClientStudentAddRequest {
                 .parentId(this.parentId)
                 .build();
     }
+
 }

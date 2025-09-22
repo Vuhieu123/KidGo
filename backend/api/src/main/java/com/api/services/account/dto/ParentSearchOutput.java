@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ParentSearchOutput {
+
     private Long id;
 
     private String name;
@@ -41,4 +42,5 @@ public class ParentSearchOutput {
                 .students(dto.getStudents().stream().map(StudentSearchOutput::from).toList())
                 .build();
     }
+
 }

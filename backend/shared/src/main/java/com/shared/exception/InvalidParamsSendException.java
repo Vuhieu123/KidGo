@@ -4,6 +4,7 @@ import com.shared.response.CommonResponse;
 import org.springframework.http.HttpStatus;
 
 public class InvalidParamsSendException extends MyException {
+
     private Object data;
 
     public InvalidParamsSendException(Object data) {
@@ -14,4 +15,5 @@ public class InvalidParamsSendException extends MyException {
     public CommonResponse<Object> toResponse() {
         return CommonResponse.badRequest(ErrorCodeList.INVALID_PARAMETER, this.data);
     }
+
 }

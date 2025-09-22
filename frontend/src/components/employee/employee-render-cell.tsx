@@ -84,14 +84,14 @@ export const EmployeeRenderCell = ({
             return (
                 <div className="flex items-center gap-4 ">
                     <div>
-                        <Tooltip content="Chi tiết">
+                        <Tooltip content="Chi tiết nhân viên">
                             <button onClick={() => console.log("View employee", employeeTable.employee.id)}>
                                 <EyeIcon size={20} fill="#979797" />
                             </button>
                         </Tooltip>
                     </div>
                     <div>
-                        <Tooltip content="Chỉnh sửa" color="secondary">
+                        <Tooltip content="Chỉnh sửa nhân viên" color="secondary">
                             <button onClick={
                                 () => {
                                     setSelectedEmployee(employeeTable);
@@ -103,7 +103,7 @@ export const EmployeeRenderCell = ({
                     </div>
                     <div>
                         <Tooltip
-                            content="Xoá" color="danger" >
+                            content="Xoá nhân viên" color="danger" >
                             <button onClick={
                                 () => {
                                     setSelectedEmployee(employeeTable);

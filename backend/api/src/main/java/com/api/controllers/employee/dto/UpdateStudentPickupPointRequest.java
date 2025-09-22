@@ -9,9 +9,13 @@ import lombok.Data;
 @Data
 @Builder
 public class UpdateStudentPickupPointRequest {
+
     private List<Long> studentIds;
+
     private Long pickupPointId;
+
     private StudentPickupPointStatus status;
+
     private Long rideId;
 
     public UpdateStudentPickupPointEmployeeInput toInput() {
@@ -22,4 +26,5 @@ public class UpdateStudentPickupPointRequest {
                 .rideId(rideId)
                 .build();
     }
+
 }

@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class BusController {
+
     private final BusService busService;
 
     @GetMapping("/pagination")

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class RequestRegistrationController {
+
     private final RequestRegistrationService requestRegistrationService;
 
     @GetMapping("/pagination")
@@ -53,4 +54,5 @@ public class RequestRegistrationController {
                 "Handle request registration successfully"
         );
     }
+
 }

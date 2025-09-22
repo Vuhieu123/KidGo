@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 public class AuthService implements UserDetailsService {
+
     private final AccountRepository accountRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByUsername(username).orElseThrow(
@@ -43,4 +45,5 @@ public class AuthService implements UserDetailsService {
     public String encodePassword(String password) {
         return new BCryptPasswordEncoder().encode(password);
     }
+
 }

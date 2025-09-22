@@ -2,16 +2,21 @@ package com.api.controllers.admin.dto;
 
 import com.api.services.account.dto.StudentAddInput;
 import com.shared.utils.DateConvertUtil;
-import java.time.Instant;
 import lombok.Data;
 
 @Data
 public class StudentAddRequest {
+
     private Long parentId;
+
     private String name;
+
     private String avatar;
+
     private String dob;
+
     private String phoneNumber;
+
     private String studentClass;
 
     public StudentAddInput toInput() {
@@ -24,4 +29,5 @@ public class StudentAddRequest {
                 .studentClass(this.studentClass)
                 .build();
     }
+
 }

@@ -6,11 +6,17 @@ import com.shared.utils.DateConvertUtil;
 import java.util.List;
 
 public class UpdateRideRequest {
+
     private Long id;
+
     private Long busId;
+
     private String startAt;
+
     private String endAt;
+
     private String startFrom;
+
     private RideStatus status;
 
     public UpdateRideInput toInput() {
@@ -23,4 +29,5 @@ public class UpdateRideRequest {
                 .startFrom(startFrom)
                 .build();
     }
+
 }

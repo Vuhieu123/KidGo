@@ -28,6 +28,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 @Entity
 @Table(name = "employee")
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

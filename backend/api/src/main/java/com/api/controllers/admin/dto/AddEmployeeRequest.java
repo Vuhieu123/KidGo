@@ -8,18 +8,28 @@ import lombok.Data;
 
 @Data
 public class AddEmployeeRequest {
+
     private Long accountId;
+
     private String name;
+
     private String phoneNumber;
+
     private String address;
+
     private String avatar;
+
     private String dob;
+
     private Long busId;
+
     private String numberPlate;
+
     private EmployeeRole role;
 
     // for create account
     private String username;
+
     private String password;
 
     public AddEmployeeInput toInput() {
@@ -36,4 +46,5 @@ public class AddEmployeeRequest {
                 .password(password)
                 .build();
     }
+
 }

@@ -11,5 +11,7 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SignUpOutput {
+
     private HttpStatus status;
+
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class HistoryController {
+
     private final HistoryService historyService;
 
     @GetMapping("/ride/pagination")
@@ -37,4 +38,5 @@ public class HistoryController {
                 historyService.getAdminHistoryRides(filterParam, pageable)
         );
     }
+
 }

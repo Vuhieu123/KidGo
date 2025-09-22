@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class EmployeeController {
+
     private final EmployeeService employeeService;
 
     @GetMapping("/pagination")
@@ -79,4 +80,5 @@ public class EmployeeController {
                 employeeService.getAvailableEmployees(role, query)
         );
     }
+
 }

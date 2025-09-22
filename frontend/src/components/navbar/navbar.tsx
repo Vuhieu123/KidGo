@@ -1,9 +1,7 @@
-import { Input, Link, Navbar, NavbarContent } from "@nextui-org/react";
+import { Navbar, NavbarContent } from "@nextui-org/react";
 import React from "react";
 import { FeedbackIcon } from "../icons/navbar/feedback-icon";
-import { GithubIcon } from "../icons/navbar/github-icon";
 import { SupportIcon } from "../icons/navbar/support-icon";
-import { SearchIcon } from "../icons/searchicon";
 import { BurguerButton } from "./burguer-button";
 import { NotificationsDropdown } from "./notifications-dropdown";
 import { UserDropdown } from "./user-dropdown";
@@ -26,16 +24,16 @@ export const NavbarWrapper = ({ children }: Props) => {
                     <BurguerButton />
                 </NavbarContent>
                 <NavbarContent className="w-full max-md:hidden">
-                    <Input
-                        startContent={<SearchIcon />}
-                        isClearable
-                        className="w-full"
-                        classNames={{
-                            input: "w-full",
-                            mainWrapper: "w-full",
-                        }}
-                        placeholder="Tìm kiếm..."
-                    />
+                    {/*<Input*/}
+                    {/*    startContent={<SearchIcon />}*/}
+                    {/*    isClearable*/}
+                    {/*    className="w-full"*/}
+                    {/*    classNames={{*/}
+                    {/*        input: "w-full",*/}
+                    {/*        mainWrapper: "w-full",*/}
+                    {/*    }}*/}
+                    {/*    placeholder="Tìm kiếm..."*/}
+                    {/*/>*/}
                 </NavbarContent>
                 <NavbarContent
                     justify="end"
@@ -51,13 +49,6 @@ export const NavbarWrapper = ({ children }: Props) => {
                     <div className="max-md:hidden">
                         <SupportIcon />
                     </div>
-
-                    <Link
-                        href="https://github.com/TrinhDucTiep"
-                        target={"_blank"}
-                    >
-                        <GithubIcon />
-                    </Link>
                     <NavbarContent>
                         <UserDropdown />
                     </NavbarContent>

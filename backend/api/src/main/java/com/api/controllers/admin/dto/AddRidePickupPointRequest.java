@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 public class AddRidePickupPointRequest {
+
     List<ItemRequest> items;
 
     public AddRidePickupPointInput toInput() {
@@ -25,4 +26,5 @@ public class AddRidePickupPointRequest {
                     .build();
         }
     }
+
 }

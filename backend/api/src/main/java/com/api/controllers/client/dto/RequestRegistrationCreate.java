@@ -6,9 +6,13 @@ import lombok.Data;
 
 @Data
 public class RequestRegistrationCreate {
+
     private List<Long> studentIds;
+
     private String address;
+
     private Double longitude;
+
     private Double latitude;
 
     public CreateRequestInput toInput() {
@@ -19,4 +23,5 @@ public class RequestRegistrationCreate {
                 .latitude(latitude)
                 .build();
     }
+
 }

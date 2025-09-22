@@ -33,19 +33,13 @@ public class RequestRegistration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id")
-    private Parent parent;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
-    private Student student;
-
     @Enumerated(EnumType.STRING)
     private RequestRegistrationStatus status;
 
     private String address;
+
     private Double longitude;
+
     private Double latitude;
 
     private String note;
@@ -57,5 +51,13 @@ public class RequestRegistration {
     @LastModifiedDate
     @UpdateTimestamp
     private Instant updatedAt;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    private Parent parent;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private Student student;
 
 }

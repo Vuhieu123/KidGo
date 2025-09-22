@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ClientStudentFilterParam {
+
     private Long id;
 
     private String name;
@@ -35,4 +36,5 @@ public class ClientStudentFilterParam {
                 .pageable(PageableUtils.generate(this.page, this.size, sortBy, "-createdAt"))
                 .build();
     }
+
 }

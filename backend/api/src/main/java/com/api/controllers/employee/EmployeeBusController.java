@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class EmployeeBusController {
+
     private final BusService busService;
 
     @PutMapping()
@@ -31,4 +32,5 @@ public class EmployeeBusController {
         busService.updateBusEmployee(request.toInput(), account);
         return ResponseUtil.toSuccessCommonResponse("Update bus successfully");
     }
+
 }

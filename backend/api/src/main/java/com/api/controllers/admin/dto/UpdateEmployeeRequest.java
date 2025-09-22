@@ -9,13 +9,21 @@ import lombok.Data;
 
 @Data
 public class UpdateEmployeeRequest {
+
     private Long id;
+
     private String name;
+
     private String phoneNumber;
+
     private String dob;
+
     private String avatar;
+
     private Long busId;
+
     private EmployeeRole role;
+
     private String busNumberPlate;
 
     public UpdateEmployeeInput toInput() {
@@ -30,4 +38,5 @@ public class UpdateEmployeeRequest {
                 .busNumberPlate((busNumberPlate == null || busNumberPlate.isEmpty()) ? null : busNumberPlate)
                 .build();
     }
+
 }

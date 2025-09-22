@@ -9,27 +9,33 @@ import { useRouter } from "next/navigation";
 
 
 export default function Login() {
+
     const router = useRouter();
 
     const [selected, setSelected] = React.useState("login");
+
     const loginMutation = useHandleLogin(
         router
     );
+
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
     } = useForm<ILoginData>()
+
     const handleLogin: SubmitHandler<ILoginData> = (data) => loginMutation.mutate(data);
 
     const signUpMutation = useHandlerSignup();
+
     const {
         register: registerSignUp,
         handleSubmit: handleSubmitSignUp,
         watch: watchSignUp,
         formState: { errors: errorsSignUp },
     } = useForm<ILoginData>()
+
     const handleSignUp: SubmitHandler<ISignUpData> = (data) => signUpMutation.mutate(data);
     return (
         <div className="flex flex-col w-full items-center justify-center min-h-screen">
@@ -116,14 +122,14 @@ export default function Login() {
                             </a>
                         </Button>
                         <Button isIconOnly variant="flat" color="primary">
-                            <Github />
-                        </Button>
-                        <Button isIconOnly variant="flat" color="primary">
-                            <Twitter />
-                        </Button>
-                        <Button isIconOnly variant="flat" color="primary">
                             <FaceBook />
                         </Button>
+                        {/*<Button isIconOnly variant="flat" color="primary">*/}
+                        {/*    <Github />*/}
+                        {/*</Button>*/}
+                        {/*<Button isIconOnly variant="flat" color="primary">*/}
+                        {/*    <Twitter />*/}
+                        {/*</Button>*/}
                     </div>
                 </CardBody>
             </Card>

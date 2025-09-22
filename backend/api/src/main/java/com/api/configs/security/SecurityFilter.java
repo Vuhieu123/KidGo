@@ -22,6 +22,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Component
 @RequiredArgsConstructor
 public class SecurityFilter extends OncePerRequestFilter {
+
     private final AccountRepository accountRepository;
 
     @Override
@@ -61,4 +62,5 @@ public class SecurityFilter extends OncePerRequestFilter {
         }
         return null;
     }
+
 }

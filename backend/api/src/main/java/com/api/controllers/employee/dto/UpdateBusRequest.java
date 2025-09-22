@@ -8,7 +8,9 @@ import lombok.Data;
 @Data
 @Builder
 public class UpdateBusRequest {
+
     private String numberPlate;
+
     private BusStatus status;
 
     public UpdateBusEmployeeInput toInput() {
@@ -17,4 +19,5 @@ public class UpdateBusRequest {
                 .status(status)
                 .build();
     }
+
 }

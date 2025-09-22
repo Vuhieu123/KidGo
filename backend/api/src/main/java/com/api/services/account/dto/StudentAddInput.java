@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class StudentAddInput {
+
     private String name;
 
     private String studentClass;
@@ -22,4 +23,5 @@ public class StudentAddInput {
     private Instant dob;
 
     private String avatar;
+
 }

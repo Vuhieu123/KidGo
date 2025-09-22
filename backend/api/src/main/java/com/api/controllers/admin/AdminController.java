@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class AdminController {
+
     private final ExampleServiceA exampleServiceA;
 
     @GetMapping("/example")
@@ -56,4 +57,5 @@ public class AdminController {
                 exampleServiceA.testKafka()
         );
     }
+
 }

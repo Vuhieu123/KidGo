@@ -17,8 +17,10 @@ public class SignUpRequest {
 
     @NotNull
     private String username;
+
     @NotNull
     private String password;
+
     @NotNull
     @EnumValidator(enumClass = UserRole.class)
     private UserRole role;

@@ -13,8 +13,11 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommonResponse<T> implements Serializable {
+
     protected String code;
+
     protected String message;
+
     protected T result;
 
     public CommonResponse(T result) {

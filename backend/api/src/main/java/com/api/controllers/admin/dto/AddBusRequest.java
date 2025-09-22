@@ -6,10 +6,15 @@ import lombok.Data;
 
 @Data
 public class AddBusRequest {
+
     private String numberPlate;
+
     private Integer seatNumber;
+
     private Long driverId;
+
     private Long driverMateId;
+
     private BusStatus status;
 
     public AddBusInput toInput() {
@@ -21,4 +26,5 @@ public class AddBusRequest {
                 .status(status)
                 .build();
     }
+
 }

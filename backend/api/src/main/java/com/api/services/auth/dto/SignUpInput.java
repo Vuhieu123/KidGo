@@ -11,7 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SignUpInput {
+
     private String username;
+
     private String password;
+
     private UserRole role;
+
 }

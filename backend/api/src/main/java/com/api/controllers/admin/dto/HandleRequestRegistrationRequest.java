@@ -7,12 +7,19 @@ import lombok.Data;
 
 @Data
 public class HandleRequestRegistrationRequest {
+
     private List<Long> requestIds;
+
     private RequestRegistrationStatus status;
+
     private Long pickupPointId;
+
     private String address;
+
     private Double latitude;
+
     private Double longitude;
+
     private String note;
 
     public HandleRequestRegistrationInput toInput() {
@@ -26,4 +33,5 @@ public class HandleRequestRegistrationRequest {
                 .note(note)
                 .build();
     }
+
 }

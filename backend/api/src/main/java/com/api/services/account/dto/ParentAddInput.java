@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ParentAddInput {
+
     private String name;
 
     private Instant dob;
@@ -25,4 +26,5 @@ public class ParentAddInput {
     private String password;
 
     private List<Long> studentIds;
+
 }

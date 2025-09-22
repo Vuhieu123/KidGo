@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetParentResponse {
+
     private Long id;
 
     private String name;
@@ -38,4 +39,5 @@ public class GetParentResponse {
         response.setUpdatedAt(Instant.now());
         return response;
     }
+
 }
