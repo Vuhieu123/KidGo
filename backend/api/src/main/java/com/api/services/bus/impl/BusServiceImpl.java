@@ -28,6 +28,8 @@ import com.shared.exception.MyException;
 import com.shared.utils.DateConvertUtil;
 import java.util.ArrayList;
 import java.util.List;
+
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -36,6 +38,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 @Slf4j
@@ -98,7 +101,7 @@ public class BusServiceImpl implements BusService {
 
     @Override
     @Transactional
-    public void addBus(AddBusInput input) {
+    public void addBus(@Valid AddBusInput input) {
         Bus bus = busRepository.findByNumberPlate(input.getNumberPlate());
         if (bus != null) {
             throw new MyException(null,

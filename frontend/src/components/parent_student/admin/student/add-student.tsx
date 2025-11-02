@@ -15,7 +15,7 @@ import {
     Skeleton,
     useDisclosure,
 } from "@nextui-org/react";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState ,useEffect} from "react";
 import { PlusIcon } from "../../../icons/plus";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAddStudent, useGetListParent, useGetListStudent } from "@/services/admin/accountService";
@@ -23,13 +23,23 @@ import _, { set } from 'lodash';
 import { SearchIcon } from "../../../icons/searchicon";
 
 export const AddStudent = () => {
-    const [parentSearch, setParentSearch] = React.useState<string>("");
+    const [parentSearchName, setParentSearchName] = React.useState<string>("");
+    const [parentSearchNumber, setParentSearchNumber] = React.useState<string>("");
     const [searchBy, setSearchBy] = React.useState<any>("PARENT_NAME");
     const inputRef = useRef(null);
 
-    const debouncedSetParentSearch = _.debounce((value: string) => setParentSearch(value), 500);
-
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+    const debouncedSetParentSearchName = React.useMemo(
+        () => _.debounce((value: string) => setParentSearchName(value), 500),
+        []
+    );
+
+    useEffect(() => {
+        return () => {
+            debouncedSetParentSearchName.cancel();
+        };
+    }, [debouncedSetParentSearchName]);
 
     const addStudentMutation = useAddStudent(onOpenChange);
     const {
@@ -45,15 +55,16 @@ export const AddStudent = () => {
 
     const { data: parentList, isLoading: parentLoading, error: parentError } = useGetListParent({
         id: null,
-        name: parentSearch,
+        name: parentSearchName,
         dob: null,
-        page: null,
-        size: null,
-        phoneNumber: null,
+        page: 0,
+        size: 10,
+        phoneNumber: parentSearchNumber,
         sort: null,
         sortBy: null,
         searchBy: searchBy
     })
+
     return (
         <div>
             <Button onPress={onOpen} color="primary" endContent={<PlusIcon />}>
@@ -138,7 +149,8 @@ export const AddStudent = () => {
                                         variant="bordered"
 
                                         onInputChange={(value) => {
-                                            debouncedSetParentSearch(value);
+                                            console.log("value 1: ", value)
+                                            debouncedSetParentSearchName(value);
                                         }}
                                         onSelectionChange={(value: any) => {
                                             console.log("value: ", value)

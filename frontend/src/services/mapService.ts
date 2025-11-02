@@ -20,6 +20,7 @@ const getAutoComplete = async (params: IAutoCompleteParams) => {
     });
     return response.data;
 }
+
 export const useGetAutoComplete = (params: IAutoCompleteParams) => {
     return useQuery<IAutoCompleteGetResponse, AxiosError>({
         queryKey: ['autoComplete', params],
@@ -44,13 +45,18 @@ export const useGetSearch = (params: ISearchParams) => {
 
 // directions
 const getDirections = async (data: IDirectionsParams) => {
-    // check has at least 2 points
     if (data.coordinates.length < 2) {
         return { routes: [] };
     }
-    const response = await apiMap.post<IDirectionsGetResponse>('/v2/directions/driving-car', data);
+
+    const payload = {
+        coordinates: data.coordinates, // [[lng, lat], [lng, lat]]
+    };
+
+    const response = await apiMap.post('/v2/directions/driving-car', payload);
     return response.data;
-}
+};
+
 export const useGetDirections = (params: IDirectionsParams) => {
     return useQuery<IDirectionsGetResponse, AxiosError>({
         queryKey: ['directions', params],

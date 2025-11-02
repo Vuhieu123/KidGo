@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 
 public class JwtUtil {
+
     @Value("${security.jwt.token.secret-key}")
     private static String JWT_SECRET = "tieptd_194185";
 
@@ -87,4 +88,5 @@ public class JwtUtil {
     public static Instant genRefreshExpirationDate() {
         return LocalDateTime.now().plusDays(30).toInstant(ZoneOffset.of("+07:00"));
     }
+
 }

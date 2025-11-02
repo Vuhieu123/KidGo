@@ -37,6 +37,7 @@ export default function Login() {
     } = useForm<ILoginData>()
 
     const handleSignUp: SubmitHandler<ISignUpData> = (data) => signUpMutation.mutate(data);
+
     return (
         <div className="flex flex-col w-full items-center justify-center min-h-screen">
             <Card className="max-w-full w-[340px] h-[400px]">
@@ -116,20 +117,19 @@ export default function Login() {
                         <Button isIconOnly
                                 variant="flat"
                                 color="primary"
+                                as="a"
+                                href={process.env.NEXT_PUBLIC_GOOGLE_AUTHORIZE_URL}
                         >
-                            <a href={process.env.GOOGLE_AUTHORIZE_URL}>
                                 <Google />
+                        </Button>
+                        <Button isIconOnly
+                                variant="flat"
+                                color="primary"
+                        >
+                            <a href={process.env.FACEBOOK_AUTHORIZE_URL}>
+                                <FaceBook />
                             </a>
                         </Button>
-                        <Button isIconOnly variant="flat" color="primary">
-                            <FaceBook />
-                        </Button>
-                        {/*<Button isIconOnly variant="flat" color="primary">*/}
-                        {/*    <Github />*/}
-                        {/*</Button>*/}
-                        {/*<Button isIconOnly variant="flat" color="primary">*/}
-                        {/*    <Twitter />*/}
-                        {/*</Button>*/}
                     </div>
                 </CardBody>
             </Card>

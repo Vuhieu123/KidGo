@@ -3,7 +3,7 @@ package com.api.controllers.auth.dto;
 import com.api.services.auth.dto.SignUpInput;
 import com.shared.enumeration.EnumValidator;
 import com.shared.enumeration.UserRole;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

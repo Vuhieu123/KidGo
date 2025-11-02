@@ -21,7 +21,7 @@ export const UserDropdown = () => {
                         as="button"
                         color="secondary"
                         size="md"
-                        src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                        src="/avatar1.png"
                     />
                 </DropdownTrigger>
             </NavbarItem>
@@ -29,28 +29,18 @@ export const UserDropdown = () => {
                 aria-label="User menu actions"
                 onAction={(actionKey) => console.log({ actionKey })}
             >
-                <DropdownItem
-                    key="profile"
-                    className="flex flex-col justify-start w-full items-start"
-                >
-                    <p>Signed in as</p>
-                    <p>tiep.td194185@sis.hust.edu.vn</p>
-                </DropdownItem>
-                <DropdownItem key="settings">My Settings</DropdownItem>
-                <DropdownItem key="team_settings">Team Settings</DropdownItem>
-                <DropdownItem key="analytics">Analytics</DropdownItem>
-                <DropdownItem key="system">System</DropdownItem>
-                <DropdownItem key="configurations">Configurations</DropdownItem>
-                <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+                {/*<DropdownItem key="settings">My Settings</DropdownItem>*/}
+                {/*<DropdownItem key="team_settings">Team Settings</DropdownItem>*/}
+                {/*<DropdownItem key="analytics">Analytics</DropdownItem>*/}
+                {/*<DropdownItem key="system">System</DropdownItem>*/}
+                {/*<DropdownItem key="configurations">Configurations</DropdownItem>*/}
+                {/*<DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>*/}
                 <DropdownItem key="logout" color="danger" className="text-danger"
                               onClick={() => {
                                   router.push("/login");
                               }}
                 >
                     Log Out
-                </DropdownItem>
-                <DropdownItem key="switch">
-                    <DarkModeSwitch />
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

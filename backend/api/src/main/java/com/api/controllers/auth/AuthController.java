@@ -70,7 +70,6 @@ public class AuthController {
         // validate refresh token
         JwtUtil.validateToken(refreshToken);
         log.info("Refresh token 11111111111111111111: " + refreshToken);
-
         return ResponseUtil.toSuccessCommonResponse(
                 JwtUtil.refreshAccessToken(refreshToken)
         );

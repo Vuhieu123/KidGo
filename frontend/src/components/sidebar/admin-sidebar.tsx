@@ -37,7 +37,7 @@ export const SidebarWrapper = () => {
                 })}
             >
                 <div className={Sidebar.Header()}>
-                    <CompaniesDropdown name="Admin" />
+                    <img src="/favicon.ico" alt="Logo" style={{ width: "120px", height: "100px" }} />
                 </div>
                 <div className="flex flex-col justify-between h-full">
                     <div className={Sidebar.Body()}>
@@ -111,24 +111,6 @@ export const SidebarWrapper = () => {
                                 icon={<SettingsIcon />}
                             />
                         </SidebarMenu>
-                    </div>
-                    <div className={Sidebar.Footer()}>
-                        <Tooltip content={"Settings"} color="primary">
-                            <div className="max-w-fit">
-                                <SettingsIcon />
-                            </div>
-                        </Tooltip>
-                        <Tooltip content={"Adjustments"} color="primary">
-                            <div className="max-w-fit">
-                                <FilterIcon />
-                            </div>
-                        </Tooltip>
-                        <Tooltip content={"Profile"} color="primary">
-                            <Avatar
-                                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                                size="sm"
-                            />
-                        </Tooltip>
                     </div>
                 </div>
             </div>

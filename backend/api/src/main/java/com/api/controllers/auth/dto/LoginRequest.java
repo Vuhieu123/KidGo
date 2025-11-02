@@ -1,7 +1,8 @@
 package com.api.controllers.auth.dto;
 
 import com.api.services.auth.dto.LoginInput;
-import javax.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

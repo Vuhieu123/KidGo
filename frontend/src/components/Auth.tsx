@@ -2,7 +2,6 @@
 import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-import { Button, ButtonGroup } from "@nextui-org/react";
 
 export const Auth: React.FC = () => {
     // extracting data from usesession as session

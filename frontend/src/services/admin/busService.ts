@@ -20,6 +20,7 @@ export const useGetListBus = (params: IGetListBusParams) => {
 const getBusDetail = async (id: number) => {
     const response = await apiClient.get<ICommonResponse<IGetBusDetailResponse>>(`/api/v1/admin/bus/${id}`);
     return response.data;
+    console.log(response.data);
 }
 export const useGetBusDetail = (id: number) => {
     return useQuery<ICommonResponse<IGetBusDetailResponse>, AxiosError>({

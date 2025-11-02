@@ -1,4 +1,4 @@
-package com.api.controllers.admin.dto;
+package com.api.controllers.admin.dto.bus;
 
 import lombok.Data;
 

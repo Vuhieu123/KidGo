@@ -2,30 +2,23 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { camelCase } from 'lodash';
 
-const api_key = "your_api_key";
+const api_key = process.env.NEXT_PUBLIC_ORS_API_KEY;
 
 const apiMap = axios.create({
     baseURL: "https://api.openrouteservice.org",
 });
 
 apiMap.interceptors.request.use((config) => {
-    if (config.method === 'get') {
-        config.params = {
-            ...config.params,
-            api_key: api_key
-        }
-    } else {
-        config.headers['Authorization'] = `${api_key}`;
-    }
+    // Thêm Authorization header cho mọi request
+    config.headers['Authorization'] = api_key;
+    config.headers['Content-Type'] = 'application/json';
 
     if (config.data) {
         config.data = toSnakeCase(config.data);
     }
 
     return config;
-}, (error) => {
-    return Promise.reject(error);
-});
+}, (error) => Promise.reject(error));
 
 apiMap.interceptors.response.use((response) => {
     response.data = toCamelCase(response.data);

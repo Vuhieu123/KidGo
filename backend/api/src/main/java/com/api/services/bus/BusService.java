@@ -16,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface BusService {
+
     Page<GetListBusOutput> getListBus(ListBusFilterParam filterParam, Pageable pageable);
 
     GetBusDetailOutput getBus(Long busId);
@@ -32,4 +33,5 @@ public interface BusService {
                                                               Pageable pageable);
 
     void updateBusEmployee(UpdateBusEmployeeInput input, Account account);
+
 }

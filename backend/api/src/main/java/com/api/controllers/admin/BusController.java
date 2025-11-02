@@ -1,15 +1,16 @@
 package com.api.controllers.admin;
 
-import com.api.controllers.admin.dto.AddBusRequest;
+import com.api.controllers.admin.dto.bus.AddBusRequest;
 import com.api.controllers.admin.dto.BusManipulateParam;
-import com.api.controllers.admin.dto.DeleteBusRequest;
-import com.api.controllers.admin.dto.UpdateBusRequest;
+import com.api.controllers.admin.dto.bus.DeleteBusRequest;
+import com.api.controllers.admin.dto.bus.UpdateBusRequest;
 import com.api.services.bus.BusService;
 import com.api.services.bus.dto.ListBusFilterParam;
 import com.shared.enumeration.EmployeeRole;
 import com.shared.response.CommonResponse;
 import com.shared.utils.PageableUtils;
 import com.shared.utils.ResponseUtil;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api/v1/admin/bus")
@@ -58,7 +60,7 @@ public class BusController {
     @PostMapping("")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public ResponseEntity<CommonResponse<Object>> addBus(
-            @RequestBody AddBusRequest request
+            @RequestBody @Valid AddBusRequest request
     ) {
         busService.addBus(request.toInput());
         return ResponseUtil.toSuccessCommonResponse("Add bus successfully");

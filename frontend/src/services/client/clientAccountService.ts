@@ -132,9 +132,11 @@ export const useGetListStudent = (params: IGetListStudentParams) => {
 };
 
 const addStudentClient = async (data: IStudenAdd) => {
+    console.log("Sending student data:", data);
     const response = await apiClient.post('/api/v1/client/account/student', data);
     return response.data;
 }
+
 export const useAddStudentClient = (callBack:any) => {
     return useMutation(
         {

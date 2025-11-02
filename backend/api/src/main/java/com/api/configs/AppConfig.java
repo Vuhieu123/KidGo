@@ -15,12 +15,4 @@ public class AppConfig {
 
     private List<String> authorizedRedirectUris = new ArrayList<>();
 
-//    @Autowired
-//    private EntityManager em;
-//
-//    @Bean
-//    public JPAQueryFactory jpaQueryFactory() {
-//        return new JPAQueryFactory(em);
-//    }
-
 }

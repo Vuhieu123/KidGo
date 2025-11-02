@@ -160,15 +160,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void addStudent(StudentAddInput input, Account account) {
-        Parent parent = parentRepository.findById(input.getParentId())
+        Account currentUser = UserContextUtil.getCurrentUser(); // <-- lấy từ token
+
+        Parent parent = parentRepository.findByAccountId(currentUser.getId())
                 .orElseThrow(() -> new MyException(null, "PARENT_NOT_FOUND", "Parent not found",
                         HttpStatus.BAD_REQUEST));
-        if (UserContextUtil.isCurrentUser(parent.getAccount().getId())){
-            input.setParentId(parent.getId());
-            addStudent(input);
-        } else {
-            throw new MyException(null, "FORBIDDEN", "Forbidden", HttpStatus.FORBIDDEN);
-        }
+
+        input.setParentId(parent.getId());
+        addStudent(input);
     }
 
 

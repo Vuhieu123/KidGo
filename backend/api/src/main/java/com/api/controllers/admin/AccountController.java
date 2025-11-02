@@ -45,7 +45,7 @@ public class AccountController {
     }
 
     @GetMapping("/student/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CLIENT')")
     public ResponseEntity<CommonResponse<Object>> getStudentDetail(@PathVariable(name = "id") Long id) {
         return ResponseUtil.toSuccessCommonResponse(accountService.getStudentDetail(id));
     }

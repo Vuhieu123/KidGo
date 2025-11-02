@@ -1,11 +1,13 @@
-package com.api.controllers.admin.dto;
+package com.api.controllers.admin.dto.bus;
 
-import com.api.services.bus.dto.AddBusInput;
+import com.api.services.bus.dto.UpdateBusInput;
 import com.shared.enumeration.BusStatus;
 import lombok.Data;
 
 @Data
-public class AddBusRequest {
+public class UpdateBusRequest {
+
+    private Long id;
 
     private String numberPlate;
 
@@ -17,8 +19,9 @@ public class AddBusRequest {
 
     private BusStatus status;
 
-    public AddBusInput toInput() {
-        return AddBusInput.builder()
+    public UpdateBusInput toInput() {
+        return UpdateBusInput.builder()
+                .id(id)
                 .numberPlate(numberPlate)
                 .seatNumber(seatNumber)
                 .driverId(driverId)
